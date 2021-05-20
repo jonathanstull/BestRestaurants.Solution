@@ -7,6 +7,7 @@ namespace BestRestaurants.Models
     public string Name { get; set; }
     public string Address { get; set; }
     public string Phone { get; set; }
+    // public byte[] Image { get; set; }
     public int CuisineId { get; set; }
     public virtual Cuisine Cuisine { get; set; }
   }

@@ -1,3 +1,23 @@
-p#delete-link a {
+div#footer {
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    color:#CCC;
+    background:#333;
+    padding:16px;
+}
+
+div#footer a {
+    padding: 24px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+p.delete-link a {
     color: red;
+}
+
+p.edit-link a {
+    color: purple;
 }

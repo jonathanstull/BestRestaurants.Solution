@@ -1,21 +1,23 @@
 @{
   Layout = "_Layout";
 }
-
 @model BestRestaurants.Models.Restaurant
 
-<h4>Add a new restaurant</h4>
+<h2>Edit @Model.Name</h2>
+
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
-  @Html.LabelFor(model => model.Address)
-  @Html.TextBoxFor(model => model.Address)
-  @Html.LabelFor(model => model.Phone)
-  @Html.TextBoxFor(model => model.Phone)
+  @Html.HiddenFor(model => model.Id)
 
-  @Html.LabelFor(model => model.Cuisine)
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name)
+  @Html.LabelFor(model => model.Address)
+  @Html.EditorFor(model => model.Address)
+  @Html.LabelFor(model => model.Phone)
+  @Html.EditorFor(model => model.Phone)
+
   @Html.DropDownList("CuisineId")
 
-  <input type="submit" value="Add" />
+  <input type="submit" value="Save" />
+
 }

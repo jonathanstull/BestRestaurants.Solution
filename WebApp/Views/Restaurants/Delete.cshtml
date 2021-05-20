@@ -1,6 +1,7 @@
 @{
   Layout = "_Layout";
 }
+
 @model BestRestaurants.Models.Restaurant
 
 <h2>Are you sure you want to delete @Model.Name?</h2>
@@ -9,4 +10,3 @@
 {
   <button type="submit" value="Delete">Confirm</button>
 }
-@Html.ActionLink("Home", "Index")
