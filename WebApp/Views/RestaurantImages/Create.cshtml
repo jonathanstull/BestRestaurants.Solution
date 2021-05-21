@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+@model BestRestaurants.Models.Restaurant
+
+<div class="main">
+  <h4>Add a new picture</h4>
+  <form enctype="multipart/form-data" method="post" action="/RestaurantImages/upload">
+    <input type="file" name="file" />
+    <input type="submit" />
+  </form>
+
+</div>

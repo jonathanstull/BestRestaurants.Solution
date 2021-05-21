@@ -1,13 +1,19 @@
 @model BestRestaurants.Models.Restaurant
+@using BestRestaurants.Models
 @{
   Layout = "_Layout";
 }
 
-<h1>@Model.Name</h1>
+<div class="main">
+  <h1>@Model.Name</h1>
 
-<h3>Address: @Model.Address</h3>
-<h3>Phone: @Model.Phone</h3>
-<h3>Cuisine: @Model.Cuisine.Name</h3>
-
-<p class="edit-link">@Html.ActionLink("Edit Restaurant", "Edit", new {id = Model.Id})</p>
-<p class="delete-link">@Html.ActionLink("Delete Restaurant", "Delete", new {id = Model.Id})</p>
+  <h3>Address: @Model.Address</h3>
+  <h3>Phone: @Model.Phone</h3>
+  <h3>Cuisine: @Model.Cuisine.Name</h3>
+  @foreach (RestaurantImage i in Model.Images)
+  {
+    <img src="data:image;base64,@i.ImageString" width="80" height="80" />
+  }
+  <p class="edit-link">@Html.ActionLink("Edit Restaurant", "Edit", new {id = Model.Id})</p>
+  <p class="delete-link">@Html.ActionLink("Delete Restaurant", "Delete", new {id = Model.Id})</p>
+</div>

@@ -2,11 +2,12 @@
   Layout = "_Layout";
 }
 
-<h1>Best Restaurants</h1>
+<div class="main">
+  <div id="splash">
+    <h3>Welcome to Best Restaurants!</h3>
+    <p>Inside, you'll find the best restaurants near you, created and submitted by people like you.</p>
+  </div>
 
-<h3>Welcome to Best Restaurants!</h3>
+  <h1 id="get-started">@Html.ActionLink("Get started", "Index", "Cuisines")</h1>
 
-<p>Inside, you'll find the best restaurants near you, created and submitted by people like you.</p>
-
-<p>@Html.ActionLink("Get started", "Index", "Cuisines")
-<p>
+</div>

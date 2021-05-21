@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+  var restaurant = ViewBag.thisRestaurant as Restaurant;
+}
+@using BestRestaurants.Models;
+@model BestRestaurants.Models.RestaurantImage
+
+<div class="main">
+  <h4>Add a new picture</h4>
+  <h1>@restaurant.Name</h1>
+  <form enctype="multipart/form-data" method="post" action="upload">
+    <input type="file" name="file" />
+    <input type="hidden" name="id" value="@restaurant.Id" />
+    <input type="submit" />
+  </form>
+  @Html.ActionLink("Skip", "Index")
+</div>

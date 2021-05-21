@@ -5,11 +5,13 @@
 @using BestRestaurants.Models;
 @model BestRestaurants.Models.Cuisine;
 
-<h1>@Html.DisplayFor(model => model.Name)</h1>
+<div class="main">
+  <h1>@Html.DisplayFor(model => model.Name)</h1>
 
-<ul>
-  @foreach (Restaurant restaurant in @Model.Restaurants)
-  {
-    <li>@Html.ActionLink($"{restaurant.Name}", "Details", "Restaurants", new { id = restaurant.Id })</li>
-  }
-</ul>
+  <ul>
+    @foreach (Restaurant restaurant in @Model.Restaurants)
+    {
+      <li>@Html.ActionLink($"{restaurant.Name}", "Details", "Restaurants", new { id = restaurant.Id })</li>
+    }
+  </ul>
+</div>

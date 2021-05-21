@@ -6,6 +6,7 @@ namespace BestRestaurants.Models
   {
     public virtual DbSet<Cuisine> Cuisines { get; set; }
     public DbSet<Restaurant> Restaurants { get; set; }
+    public DbSet<RestaurantImage> Images { get; set; }
     public BestRestaurantsContext(DbContextOptions options) : base(options) { }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

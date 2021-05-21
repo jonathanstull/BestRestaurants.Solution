@@ -3,21 +3,24 @@
 }
 @model BestRestaurants.Models.Restaurant
 
-<h2>Edit @Model.Name</h2>
+<div class="main">
+  <h2>Edit @Model.Name</h2>
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.Id)
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.Id)
 
-  @Html.LabelFor(model => model.Name)
-  @Html.EditorFor(model => model.Name)
-  @Html.LabelFor(model => model.Address)
-  @Html.EditorFor(model => model.Address)
-  @Html.LabelFor(model => model.Phone)
-  @Html.EditorFor(model => model.Phone)
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
+    @Html.LabelFor(model => model.Address)
+    @Html.EditorFor(model => model.Address)
+    @Html.LabelFor(model => model.Phone)
+    @Html.EditorFor(model => model.Phone)
 
-  @Html.DropDownList("CuisineId")
+    @Html.DropDownList("CuisineId")
 
-  <input type="submit" value="Save" />
+    <input type="submit" value="Save" />
 
-}
+  }
+  @Html.ActionLink("Add Picture", "Upload", new {id = @Model.Id})
+</div>

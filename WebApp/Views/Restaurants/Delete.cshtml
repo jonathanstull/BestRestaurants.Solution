@@ -4,9 +4,11 @@
 
 @model BestRestaurants.Models.Restaurant
 
-<h2>Are you sure you want to delete @Model.Name?</h2>
+<div class="main">
+  <h2>Are you sure you want to delete @Model.Name?</h2>
 
-@using (Html.BeginForm())
-{
-  <button type="submit" value="Delete">Confirm</button>
-}
+  @using (Html.BeginForm())
+  {
+    <button type="submit" value="Delete">Confirm</button>
+  }
+</div>

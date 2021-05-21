@@ -3,19 +3,23 @@
 }
 
 @model BestRestaurants.Models.Restaurant
+@using BestRestaurants.Models
+<div class="main">
+  <h4>Add a new restaurant</h4>
+  @using (Html.BeginForm())
+  {
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+    @Html.LabelFor(model => model.Address)
+    @Html.TextBoxFor(model => model.Address)
+    @Html.LabelFor(model => model.Phone)
+    @Html.TextBoxFor(model => model.Phone)
 
-<h4>Add a new restaurant</h4>
-@using (Html.BeginForm())
-{
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
-  @Html.LabelFor(model => model.Address)
-  @Html.TextBoxFor(model => model.Address)
-  @Html.LabelFor(model => model.Phone)
-  @Html.TextBoxFor(model => model.Phone)
+    @Html.LabelFor(model => model.Cuisine)
+    @Html.DropDownList("CuisineId")
 
-  @Html.LabelFor(model => model.Cuisine)
-  @Html.DropDownList("CuisineId")
+    <input type="submit" value="Add" />
 
-  <input type="submit" value="Add" />
-}
+  }
+
+</div>

@@ -2,8 +2,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BestRestaurants.Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using Microsoft.AspNetCore.Http;
+
+
 
 namespace BestRestaurants.Controllers
 {
@@ -31,10 +36,37 @@ namespace BestRestaurants.Controllers
     [HttpPost]
     public ActionResult Create(Restaurant restaurant)
     {
+
       _db.Restaurants.Add(restaurant);
       _db.SaveChanges();
+      return RedirectToAction("Upload", new { id = restaurant.Id });
+    }
+
+    public ActionResult Upload(int id)
+    {
+
+      ViewBag.thisRestaurant = _db.Restaurants.FirstOrDefault(restaurant => restaurant.Id == id);
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Upload(IFormFile file, int id)
+    {
+      Console.Write(id);
+      using (var ms = new MemoryStream())
+      {
+        file.CopyTo(ms);
+        var fileBytes = ms.ToArray();
+        RestaurantImage newImage = new RestaurantImage();
+        string s = Convert.ToBase64String(fileBytes);
+        newImage.ImageString = s;
+        newImage.RestaurantId = id;
+        _db.Images.Add(newImage);
+        _db.SaveChanges();
+      }
       return RedirectToAction("Index");
     }
+
 
     public ActionResult Details(int id)
     {
@@ -72,5 +104,10 @@ namespace BestRestaurants.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
   }
+
 }
+
+
+

@@ -1,23 +1,88 @@
-div#footer {
-    position:fixed;
-    bottom:0px;
-    left:0px;
-    width:100%;
-    color:#CCC;
-    background:#333;
-    padding:16px;
+body {
+    width: 100%;
+    margin: 200px 0 200px;
+    position: relative;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 33% 34% 33%;
+    font-family: 'Spinnaker', sans-serif;
+    font-size: 20px;
+    display: grid;
 }
 
-div#footer a {
-    padding: 24px;
-    margin-left: 16px;
-    margin-right: 16px;
+.main {
+    grid-column-start: 2;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+}
+
+.main form {
+    padding-bottom: 16px;
+    padding-top: 16px;
+}
+
+#splash {
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    grid-row-start: 2;
+}
+
+#get-started {
+    font-family: 'Oleo Script', cursive;
+    color: #000;
+    width: auto;
+    margin: 50px 0;
+    display: block;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Oleo Script', cursive;
+    font-size: 50px;
+    color: #ff7142;
+}
+
+body h1 h2 h3 {
+    font-family: 'Cantarell', sans-serif;
 }
 
 p.delete-link a {
-    color: red;
+    color: #FCD581;
 }
 
 p.edit-link a {
-    color: purple;
+    color: #FCD581;
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    color: #CCC;
+    background: #eee;
+    padding: 16px;
+    text-align: left;
+    margin-bottom: 20px
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    color: #CCC;
+    background: #eee;
+    padding: 16px;
+    text-align: center;
+    font-size: 12px;
+}
+
+footer a {
+    padding: 24px;
+    margin-left: 16px;
+    margin-right: 16px;
 }
