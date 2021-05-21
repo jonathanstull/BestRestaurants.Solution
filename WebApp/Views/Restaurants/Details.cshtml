@@ -12,7 +12,7 @@
   <h3>Cuisine: @Model.Cuisine.Name</h3>
   @foreach (RestaurantImage i in Model.Images)
   {
-    <img src="data:image;base64,@i.ImageString" width="80" height="80" />
+    <img src="data:image;base64,@i.ImageString" width="auto" height="80" />
   }
   <p class="edit-link">@Html.ActionLink("Edit Restaurant", "Edit", new {id = Model.Id})</p>
   <p class="delete-link">@Html.ActionLink("Delete Restaurant", "Delete", new {id = Model.Id})</p>
